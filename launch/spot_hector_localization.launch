@@ -1,0 +1,11 @@
+<launch>
+	<!-- Launch Sensors -->
+	<include file="$(find arpg_spot)/launch/ouster.launch"/>
+    <include file="$(find spot_localization)/launch/ouster_2_laser_scan.launch"/>
+	<!-- Launch tf_tree -->
+	<include file="$(find spot_localization)/launch/spot_transforms.launch"/>
+	<!-- Launch Hector map -->
+	<include file="$(find spot_localization)/launch/spot_hector_localization.launch"/>
+	<!-- Launch RVIZ -->
+	<node name="rviz" pkg="rviz" type="rviz" args="-d $(find marble_li_pkg)/configs/spot_rviz.rviz"/>
+</launch>
