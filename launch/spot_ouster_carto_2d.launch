@@ -2,7 +2,7 @@
 <node name="cartographer_node" pkg="cartographer_ros"
       type="cartographer_node" args="
           -configuration_directory $(find spot_localization)/configs
-          -configuration_basename spot_2d.lua"
+          -configuration_basename spot_2d_ouster_only.lua"
       output="screen">
     <remap from="points2" to="/os1_cloud_node/points" />
     <remap from="imu" to="/os1_cloud_node/imu" />
