@@ -1,0 +1,10 @@
+<launch>
+	<!-- Launch Sensors -->
+	<include file="$(find arpg_spot)/launch/ouster.launch"/>
+	<!-- Launch tf_tree -->
+	<include file="$(find spot_localiztion)/launch/spot_ouster_only_tfs.launch"/>
+	<!-- Launch Cartographer -->
+	<include file="$(find spot_localiztion)/launch/spot_ouster_carto_3d.launch"/>
+	<!-- Launch RVIZ -->
+	<node name="rviz" pkg="rviz" type="rviz" args="-d $(find spot_localiztion)/configs/spot_rviz.rviz"/>
+</launch>

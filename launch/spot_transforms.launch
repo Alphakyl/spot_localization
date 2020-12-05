@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<launch>
+	<arg name="vehicle_name" default="spot"/>
+	<node pkg="tf2_ros" type="static_transform_publisher" name="imu_viz_link" ns="$(arg vehicle_name)"
+		args="0 0 0 -1.57 0 3.14 $(arg vehicle_name)/imu_viz_link $(arg vehicle_name)/imu_link"/>
+	<node pkg="tf2_ros" type="static_transform_publisher" name="horiz_ouster_link" ns="$(arg vehicle_name)" 
+		args="0 0 0.08 3.14159262 0 0 $(arg vehicle_name)/imu_viz_link $(arg vehicle_name)/horiz_ouster_link"/>
+</launch>
