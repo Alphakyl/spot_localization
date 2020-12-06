@@ -20,7 +20,7 @@
   <node name="cartographer_node" pkg="cartographer_ros"
       type="cartographer_node" args="
           -configuration_directory $(find spot_localization)/configs
-	        -configuration_basename spot_3D_ouster_imu.lua">
+	        -configuration_basename spot_3d_ouster_imu.lua">
 		<remap from="/points2" to="/horiz/os1_cloud_node/points"/>
 		<remap from="/imu" to="/imu_raw"/>
   </node>
